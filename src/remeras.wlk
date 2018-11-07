@@ -42,7 +42,6 @@ class RemeraBordada inherits RemeraLisa{
 }
 
 
-
 class RemeraSublimada inherits RemeraLisa{
 	var property altoDelDibujo
 	var property anchoDelDibujo
