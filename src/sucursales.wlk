@@ -4,19 +4,25 @@ class Comercio{
 	var property sucursales
 
 	method totalFacturadoEnTodasLasSucursales(){
-		sucursales.sum{sucursal => sucursal.totalFacturado() }
+		return sucursales.sum{sucursal => sucursal.totalFacturado() }
 	}
 
 	method pedidoMasCaro(){
-		sucursales.max{sucursal => sucursal.pedidoDeSucursalMasCaro()}
+		return sucursales.max{sucursal => sucursal.pedidoDeSucursalMasCaro()}
 	}
 	
 	method todosLosPedidosDeUnSoloColor(color){
-		sucursales.count{sucursal => sucursal.pedidosDeUnSoloColor(color)
+		return sucursales.count{sucursal => sucursal.pedidosDeUnSoloColor(color)}
 	}
+	
+	
+	method sucursalQueMasFacturo(){
+		return sucursales.max{sucursal => sucursal.totalFacturado()}
+	}
+	
 
 }
-}
+
 
 class Sucursales{
 	var property pedidos
@@ -56,6 +62,9 @@ class Sucursales{
 	method pedidoDeSucursalMasCaro(){
 		return pedidos.max{pedido => self.precioDePedido(pedido)}
 	}
+	
+	
+
 
 
 
