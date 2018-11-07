@@ -1,0 +1,33 @@
+import remeras.*
+import sucursales.*
+
+describe "test de sucursales y remeras"{
+	
+	var remeraLisa1 = new RemeraLisa(talle = 42, color = "Gris")
+	var remeraFrozen = new RemeraSublimada(anchoDelDibujo = 10 , altoDelDibujo = 15, talle = 42, color = "Gris",
+							tieneDerechos = true, costoDeLosDerechos = 100)
+	var flores = new Sucursales(cantidadMinimaDeRemeras = 10, pedidos = [])
+	var avellaneda = new Sucursales (cantidadMinimaDeRemeras = 3 , pedidos = [])
+	var pedido1 = new Pedido(modeloDeRemera = remeraLisa1, cantidad = 5)
+	var pedido2 = new Pedido(modeloDeRemera = remeraFrozen, cantidad = 4 )
+	
+	test "precio De Pedidos de la sucursal flores me debe retornar 500"{
+		assert.equals(flores.precioDePedido(pedido1), 500)
+	}
+	
+	test "precio de pedidos de la sucursal avellaneda me debe retornar 450"{
+		assert.equals(avellaneda.precioDePedido(pedido1), 450)
+	}
+	
+	
+	test"precio de pedido 2 para sucursal flores debe retornar 1100"{
+		assert.equals(flores.precioDePedido(pedido2), 1100)
+	}
+	
+	
+	test" precio de pedido 2 para sucursal avellaneda debe retornar 880"{
+		assert.equals(avellaneda.precioDePedido(pedido2), 880)
+	}
+	
+	
+}
