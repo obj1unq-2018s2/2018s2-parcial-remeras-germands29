@@ -11,6 +11,7 @@ class RemeraLisa{
 	}
 	
 	method esDeColorBasico(){
+		// TODO Sería mejor usar una colección.
 		return self.color() == "Blanco" or self.color() == "Negro" or self.color() == "Gris"
 	}
 	
@@ -31,6 +32,7 @@ class RemeraBordada inherits RemeraLisa{
 	var property cantidadDeColores
 	
 	override method costoDeRemera(){
+		// TODO Podría dividirse mejor en subtareas y evitar duplicaciones.
 		if (self.cantidadDeColores() == 1)  return   super() + 20
 		else 	return  (self.cantidadDeColores() * 10) + super()
 	}
@@ -57,13 +59,14 @@ class RemeraSublimada inherits RemeraLisa{
 	}
 	
 	override method costoDeRemera(){
+		// TODO Podría dividirse mejor en subtareas y evitar duplicaciones.
 		if(self.tieneDerechos()) return self.costoDelSublimado() + super() + self.costoDeLosDerechos()	
 		else return self.costoDelSublimado() + super()
 
 	}	
 	
 	override method porcentajeDeDescuento(){
-		if (self.tieneDerechos()) return 20
+		if (self.tieneDerechos()) return 20 // TODO No es lo que dice el enunciado, estás mezclando dos cosas distintas.
 		else return super()
 		
 	}

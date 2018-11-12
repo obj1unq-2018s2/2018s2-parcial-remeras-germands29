@@ -8,10 +8,12 @@ class Comercio{
 	}
 
 	method pedidoMasCaro(){
+		// TODO Esto es incorrecto, está devolviendo una sucursal.
 		return sucursales.max{sucursal => sucursal.pedidoDeSucursalMasCaro()}
 	}
 	
 	method todosLosPedidosDeUnSoloColor(color){
+		// TODO Incorrecto, no puede hacerse con count.
 		return sucursales.count{sucursal => sucursal.pedidosDeUnSoloColor(color)}
 	}
 	
